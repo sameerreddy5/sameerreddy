@@ -1,0 +1,88 @@
+.wrapper {
+    background: #050505;
+    /* Deep black */
+    color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    /* More refined shadow */
+    border: 1px solid #333;
+}
+
+.blogContent {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e5e5e5;
+    /* Light gray text */
+}
+
+.blogContent h1,
+.blogContent h2,
+.blogContent h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.blogContent p {
+    margin-bottom: 1.5rem;
+}
+
+.blogContent ul,
+.blogContent ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.blogContent li {
+    margin-bottom: 0.5rem;
+}
+
+.blogContent a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.blogContent blockquote {
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
+    font-style: italic;
+    margin: 1.5rem 0;
+    color: #a3a3a3;
+    /* Light gray for quotes */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 1.25rem;
+        /* Reduce padding on mobile */
+        border-radius: 8px;
+    }
+
+    .blogContent h1 {
+        font-size: 1.8rem;
+        /* Smaller heading */
+        margin-top: 1.5rem;
+    }
+
+    .blogContent h2 {
+        font-size: 1.4rem;
+    }
+
+    .blogContent h3 {
+        font-size: 1.2rem;
+    }
+
+    .blogContent {
+        font-size: 1rem;
+        /* Slightly smaller body text */
+    }
+
+    .blogContent ul,
+    .blogContent ol {
+        padding-left: 1.2rem;
+        /* Less indentation */
+    }
+}

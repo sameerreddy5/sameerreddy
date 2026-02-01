@@ -1,0 +1,228 @@
+.hero {
+  padding: 6rem 0;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.heroContent {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--gray-800);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.heroImage {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.profileImg {
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 4px var(--primary);
+}
+
+.sectionHeader {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.sectionHeader h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.underline {
+  height: 4px;
+  width: 60px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+.aboutContent {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  max-width: 800px;
+  color: var(--gray-800);
+}
+
+.aboutContent p {
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-color: var(--primary);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--gray-800);
+  opacity: 0.8;
+}
+
+.resources {
+  background-color: var(--gray-100);
+}
+
+.resourceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.resourceCard {
+  background: var(--background);
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resourceIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.resourceCard h4 {
+  font-size: 1.1rem;
+}
+
+.linkArrow {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+.communityContainer {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.communityImage {
+  flex: 1;
+}
+
+.feedImg {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.feedImg:hover {
+  transform: rotate(0);
+}
+
+.communityContent {
+  flex: 1;
+}
+
+.communityContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.communityContent p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--gray-800);
+}
+
+.socialButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    flex-direction: column-reverse;
+    /* Text below image on mobile usually, but standard is Image Top or Image Bottom? Let's do Text Bottom if image is big, but standard hero is Text Top. Let's stack naturally: Text then Image? No, usually Image then Text or Text then Image. Let's do Text Top. */
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroContent {
+    padding-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  .heroImage {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .communityContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feedImg {
+    transform: none;
+    max-width: 100%;
+    height: auto;
+  }
+}
