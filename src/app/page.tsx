@@ -145,7 +145,7 @@ export default async function Home() {
               <a href="https://instagram.com/sameerreddy.in" target="_blank" className="btn btn-primary">
                 Follow on Instagram
               </a>
-              {/* <a href="#" className="btn">Join WhatsApp</a> */}
+              <a href="https://t.me/sameerreddyin" target="_blank" className="btn">Join Telegram</a>
             </div>
           </div>
         </div>

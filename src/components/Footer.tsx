@@ -11,6 +11,7 @@ export default function Footer() {
                 <div className={styles.socials}>
                     <a href="mailto:contact@sameerreddy.in">contact@sameerreddy.in</a>
                     <a href="https://instagram.com/sameerreddy.in" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://t.me/sameerreddyin" target="_blank" rel="noopener noreferrer">Telegram</a>
                 </div>
                 <div className={styles.copyright}>
                     &copy; {new Date().getFullYear()} Sameer Reddy. All rights reserved.
