@@ -9,16 +9,7 @@ import VisitorTracker from "@/components/VisitorTracker";
 import styles from "./page.module.css";
 import { getPosts } from "@/lib/data";
 
-import Image from "next/image";
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import PostList from "@/components/PostList";
-import BlogList from "@/components/BlogList";
-import InstagramCarousel from "@/components/InstagramCarousel";
-import VisitorTracker from "@/components/VisitorTracker";
-import styles from "./page.module.css";
-import { getPosts } from "@/lib/data";
+
 
 // Revalidate every 60 seconds (ISR)
 export const revalidate = 60;
