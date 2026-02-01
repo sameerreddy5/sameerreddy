@@ -20,11 +20,11 @@ export default function BlogList({ initialPosts }: Props) {
 
     if (posts.length === 0) return <p>No articles yet.</p>;
 
-    // Helper to strip HTML for preview
+    // Helper to strip HTML for preview (SSR safe)
     const getExcerpt = (html: string) => {
-        const tmp = document.createElement("DIV");
-        tmp.innerHTML = html;
-        const text = tmp.textContent || tmp.innerText || "";
+        if (!html) return "";
+        // Simple regex to strip HTML tags
+        const text = html.replace(/<[^>]+>/g, '');
         return text.substring(0, 100) + "...";
     };
 
