@@ -230,4 +230,8 @@
     max-width: 100%;
     height: auto;
   }
+
+  .socialButtons {
+    justify-content: center;
+  }
 }
