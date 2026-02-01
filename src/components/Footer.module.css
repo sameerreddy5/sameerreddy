@@ -1,10 +1,10 @@
 .footer {
     padding: 2rem 0;
-    /* Reduced from 4rem */
-    background: #f8f9fa;
-    /* Slightly lighter gray */
-    border-top: 1px solid #eee;
+    background: #0a0a0a;
+    /* Deep Dark */
+    border-top: 1px solid #222;
     margin-top: 3rem;
+    color: #ededed;
 }
 
 .container {
@@ -13,7 +13,6 @@
     align-items: center;
     text-align: center;
     gap: 1rem;
-    /* Tighter gap */
 }
 
 /* Desktop: Use row layout to save vertical space */
@@ -28,12 +27,12 @@
 
 .content h3 {
     font-size: 1.2rem;
-    /* Smaller, cleaner */
     margin-bottom: 0.2rem;
+    color: #fff;
 }
 
 .quote {
-    color: var(--gray-800);
+    color: #888;
     font-size: 0.9rem;
     font-style: italic;
     margin: 0;
@@ -45,21 +44,23 @@
     font-size: 0.9rem;
 }
 
+.socials a {
+    color: #ccc;
+    transition: color 0.2s;
+}
+
+.socials a:hover {
+    color: var(--primary);
+}
+
 .copyright {
     margin-top: 0;
-    /* Removing extra margin */
     font-size: 0.8rem;
-    color: #888;
+    color: #666;
 }
 
 @media (min-width: 768px) {
     .copyright {
-        /* If we want copyright in the row, we could. 
-           But usually it's fine.
-           Let's actually move copyright to be inline or nicely placed.
-           Wait, if container is row, copyright is just a child.
-           If we have 3 children (Content, Socials, Copyright), space-between separates them.
-        */
-        /* Let's keep 3 items: Content, Socials, Copyright */
+        /* Keep logic empty or minimal */
     }
 }
