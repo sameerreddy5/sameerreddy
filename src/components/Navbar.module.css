@@ -33,9 +33,71 @@
     color: var(--primary);
 }
 
+/* Hamburger styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--foreground);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Open state transformations */
+.barOpen:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.barOpen:nth-child(2) {
+    opacity: 0;
+}
+
+.barOpen:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
     .links {
         display: none;
-        /* Mobile menu to be implemented if needed, or simple stack */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--background);
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border-bottom: 1px solid var(--gray-200);
+    }
+
+    .links.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
