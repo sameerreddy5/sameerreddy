@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import styles from "../page.module.css";
+import styles from "./about.module.css";
 
 export default function About() {
     return (
@@ -10,24 +10,24 @@ export default function About() {
             <section className="section-padding">
                 <div className="container">
                     <div className={styles.sectionHeader}>
-                        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>About Me</h1>
+                        <h1 className={styles.title}>About Me</h1>
                         <div className={styles.underline}></div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
-                        <div>
+                    <div className={styles.grid}>
+                        <div className={styles.profileImageWrapper}>
                             <Image
                                 src="/profile.jpg"
                                 alt="Tamalampudi Sameer Reddy"
                                 width={500}
                                 height={500}
-                                style={{ borderRadius: '50%', width: '100%', maxWidth: '400px', aspectRatio: '1', height: 'auto', objectFit: 'cover', border: '4px solid var(--primary)', margin: '0 auto', display: 'block' }}
+                                className={styles.profileImage}
                             />
                         </div>
 
                         <div className={styles.aboutContent}>
-                            <h2 style={{ marginBottom: '1rem', fontSize: '1.8rem' }}>Tamalampudi Sameer Reddy</h2>
-                            <p style={{ fontWeight: 600, color: 'var(--primary)', marginBottom: '1.5rem' }}>
+                            <h2>Tamalampudi Sameer Reddy</h2>
+                            <p className={styles.subtitle}>
                                 Digital Storyteller | Ubalanka, Konaseema, AP
                             </p>
 

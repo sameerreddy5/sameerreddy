@@ -26,12 +26,12 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
     return (
         <main>
             <Navbar />
-            <article className={`container ${styles.articleContainer}`} style={{ padding: '6rem 0' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: '1rem' }}>
-                    <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', flex: 1 }}>{post.title}</h1>
+            <article className={`container ${styles.articleContainer}`}>
+                <div className={styles.header}>
+                    <h1 className={styles.title}>{post.title}</h1>
                     <GoogleTranslate />
                 </div>
-                <div style={{ color: 'gray', marginBottom: '2rem' }}>
+                <div className={styles.date}>
                     {new Date(post.createdAt).toLocaleDateString()}
                 </div>
 
