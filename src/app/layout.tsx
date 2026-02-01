@@ -12,6 +12,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Sameer Reddy | Telugu Digital Storyteller",
   description: "No noise. Only growth. Join the journey of discipline and clarity.",
+  other: {
+    "google-adsense-account": "ca-pub-3156356414560763"
+  }
 };
 
 export default function RootLayout({
