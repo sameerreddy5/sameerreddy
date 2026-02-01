@@ -11,17 +11,12 @@ interface Post {
     isInstagram?: boolean;
 }
 
-export default function PostList() {
-    const [posts, setPosts] = useState<Post[]>([]);
+interface Props {
+    initialPosts: any[];
+}
 
-    useEffect(() => {
-        fetch('/api/posts', { cache: 'no-store' })
-            .then(res => res.json())
-            .then(data => {
-                const resources = data.filter((p: any) => p.type === 'resource');
-                setPosts(resources);
-            });
-    }, []);
+export default function PostList({ initialPosts }: Props) {
+    const [posts] = useState<any[]>(initialPosts || []);
 
     if (posts.length === 0) return (
         <div className={styles.resourceGrid}>

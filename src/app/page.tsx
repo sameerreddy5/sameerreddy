@@ -7,8 +7,29 @@ import BlogList from "@/components/BlogList";
 import InstagramCarousel from "@/components/InstagramCarousel";
 import VisitorTracker from "@/components/VisitorTracker";
 import styles from "./page.module.css";
+import { getPosts } from "@/lib/data";
 
-export default function Home() {
+import Image from "next/image";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import PostList from "@/components/PostList";
+import BlogList from "@/components/BlogList";
+import InstagramCarousel from "@/components/InstagramCarousel";
+import VisitorTracker from "@/components/VisitorTracker";
+import styles from "./page.module.css";
+import { getPosts } from "@/lib/data";
+
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
+
+export default async function Home() {
+  const allPosts = await getPosts();
+
+  // Filter for resources (PostList) and blogs (BlogList)
+  const resourcePosts = allPosts.filter((p: any) => p.type !== 'blog');
+  const blogPosts = allPosts.filter((p: any) => p.type === 'blog');
+
   return (
     <main>
       <VisitorTracker />
@@ -76,7 +97,7 @@ export default function Home() {
             <h2>Resources</h2>
             <div className={styles.underline}></div>
           </div>
-          <PostList />
+          <PostList initialPosts={resourcePosts} />
         </div>
       </section>
 
@@ -103,7 +124,7 @@ export default function Home() {
             <h2>Recent Articles</h2>
             <div className={styles.underline}></div>
           </div>
-          <BlogList />
+          <BlogList initialPosts={blogPosts} />
         </div>
       </section >
 

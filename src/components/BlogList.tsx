@@ -11,16 +11,12 @@ interface Post {
     createdAt: string;
 }
 
-export default function BlogList() {
-    const [posts, setPosts] = useState<Post[]>([]);
+interface Props {
+    initialPosts: any[];
+}
 
-    useEffect(() => {
-        fetch('/api/posts')
-            .then(res => res.json())
-            .then(data => {
-                setPosts(data.filter((p: any) => p.type === 'blog'));
-            });
-    }, []);
+export default function BlogList({ initialPosts }: Props) {
+    const [posts] = useState<any[]>(initialPosts || []);
 
     if (posts.length === 0) return <p>No articles yet.</p>;
 
