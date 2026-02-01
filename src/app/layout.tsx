@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className={inter.className}>
         {children}
-        <AdSenseScript pId="" /> {/* Add your Publisher ID here later: ca-pub-XXXXXXXXXXXXXXXX */}
+        <AdSenseScript pId="ca-pub-3156356414560763" />
       </body>
     </html>
   );
