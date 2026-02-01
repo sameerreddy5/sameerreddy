@@ -18,13 +18,13 @@ function savePostsToFile(posts: any[]) {
     // Only in development or if explicitly needed
     try {
         fs.writeFileSync(dataPath, JSON.stringify(posts, null, 2));
-    } catch(e) { console.error("File write failed", e); }
+    } catch (e) { console.error("File write failed", e); }
 }
 
 export async function GET() {
     try {
         const db = await connectDB();
-        
+
         if (db) {
             // DATABASE MODE
             let posts = await Post.find({}).sort({ createdAt: -1 });
@@ -38,18 +38,15 @@ export async function GET() {
                     posts = await Post.find({}).sort({ createdAt: -1 });
                 }
             }
-            
-            // Format generic ID to string if needed (Mongoose uses _id)
-            // But we stored our custom 'id' string in the schema, so it should be fine.
+
             return NextResponse.json(posts);
+        } else {
+            throw new Error("Failed to connect to database");
         }
     } catch (e) {
         console.error("DB Error", e);
+        return NextResponse.json({ error: "Database Connection Failed" }, { status: 500 });
     }
-
-    // FALLBACK: File System
-    console.log("Using File System Fallback");
-    return NextResponse.json(getPostsFromFile());
 }
 
 export async function POST(request: Request) {
@@ -71,16 +68,13 @@ export async function POST(request: Request) {
         if (db) {
             await Post.create(newPostData);
             return NextResponse.json({ success: true, post: newPostData });
+        } else {
+            throw new Error("Failed to connect to database");
         }
     } catch (e) {
         console.error("DB Create Error", e);
+        return NextResponse.json({ error: "Database Connection Failed" }, { status: 500 });
     }
-
-    // Fallback
-    const posts = getPostsFromFile();
-    posts.unshift(newPostData);
-    savePostsToFile(posts);
-    return NextResponse.json({ success: true, post: newPostData });
 }
 
 export async function PUT(request: Request) {
@@ -99,14 +93,13 @@ export async function PUT(request: Request) {
             await Post.findOneAndUpdate({ id: id }, updateData);
             const allPosts = await Post.find({}).sort({ createdAt: -1 });
             return NextResponse.json({ success: true, posts: allPosts });
+        } else {
+            throw new Error("Failed to connect to database");
         }
-    } catch (e) { console.error("DB Update Error", e); }
-
-    // Fallback
-    let posts = getPostsFromFile();
-    posts = posts.map((p: any) => p.id === id ? { ...p, ...updateData } : p);
-    savePostsToFile(posts);
-    return NextResponse.json({ success: true, posts });
+    } catch (e) {
+        console.error("DB Update Error", e);
+        return NextResponse.json({ error: "Database Connection Failed" }, { status: 500 });
+    }
 }
 
 export async function DELETE(request: Request) {
@@ -118,12 +111,11 @@ export async function DELETE(request: Request) {
         if (db) {
             await Post.findOneAndDelete({ id: id });
             return NextResponse.json({ success: true });
+        } else {
+            throw new Error("Failed to connect to database");
         }
-    } catch (e) { console.error("DB Delete Error", e); }
-
-    // Fallback
-    let posts = getPostsFromFile();
-    posts = posts.filter((p: any) => p.id !== id);
-    savePostsToFile(posts);
-    return NextResponse.json({ success: true, posts });
+    } catch (e) {
+        console.error("DB Delete Error", e);
+        return NextResponse.json({ error: "Database Connection Failed" }, { status: 500 });
+    }
 }
