@@ -15,7 +15,13 @@ import { getPosts } from "@/lib/data";
 export const revalidate = 60;
 
 export default async function Home() {
-  const allPosts = await getPosts();
+  let allPosts = await getPosts();
+
+  // Defensive check: Ensure allPosts is an array
+  if (!Array.isArray(allPosts)) {
+    console.error("Home: allPosts is not an array:", allPosts);
+    allPosts = [];
+  }
 
   // Filter for resources (PostList) and blogs (BlogList)
   const resourcePosts = allPosts.filter((p: any) => p.type !== 'blog');
