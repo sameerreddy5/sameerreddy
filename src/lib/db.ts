@@ -27,6 +27,7 @@ export async function connectDB() {
     if (!cached.promise) {
         cached.promise = mongoose.connect(MONGODB_URI, {
             bufferCommands: false,
+            serverSelectionTimeoutMS: 5000, // Fail fast (5s) if DB is down, to switch to file fallback
         }).then((mongoose) => {
             return mongoose;
         });
