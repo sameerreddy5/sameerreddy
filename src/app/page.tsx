@@ -2,31 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PostList from "@/components/PostList";
-import BlogList from "@/components/BlogList";
-import InstagramCarousel from "@/components/InstagramCarousel";
 import VisitorTracker from "@/components/VisitorTracker";
 import styles from "./page.module.css";
-import { getPosts } from "@/lib/data";
 
 
 
 // Revalidate every 60 seconds (ISR)
 export const revalidate = 60;
 
-export default async function Home() {
-  let allPosts = await getPosts();
-
-  // Defensive check: Ensure allPosts is an array
-  if (!Array.isArray(allPosts)) {
-    console.error("Home: allPosts is not an array:", allPosts);
-    allPosts = [];
-  }
-
-  // Filter for resources (PostList) and blogs (BlogList)
-  const resourcePosts = allPosts.filter((p: any) => p.type !== 'blog');
-  const blogPosts = allPosts.filter((p: any) => p.type === 'blog');
-
+export default function Home() {
   return (
     <main>
       <VisitorTracker />
@@ -60,8 +44,6 @@ export default async function Home() {
         </div>
       </section>
 
-
-
       {/* Content / What I Do */}
       <section id="content" className="section-padding">
         <div className="container">
@@ -86,48 +68,21 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Resources Section - Placeholder for dynamic content */}
-      {/* Resources Section */}
-      <section id="resources" className={`section-padding ${styles.resources}`}>
+      {/* Paid Collaborations Section */}
+      <section className="section-padding" style={{ background: 'var(--gray-100)' }}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Resources</h2>
+            <h2>Paid Collaborations</h2>
             <div className={styles.underline}></div>
           </div>
-          <PostList initialPosts={resourcePosts} />
+          <p style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
+            For paid collaborations mail to <a href="mailto:contact@sameerreddy.in" style={{ color: 'var(--primary)', fontWeight: '600' }}>contact@sameerreddy.in</a>
+          </p>
         </div>
       </section>
 
-      {/* Instagram Carousel Section */}
-      < section className="section-padding" style={{ background: 'var(--background)' }
-      }>
-        <div className="container">
-          <div className={styles.sectionHeader} style={{ marginBottom: '1rem' }}>
-            <h2>Latest Reels</h2>
-            <div className={styles.underline}></div>
-          </div>
-        </div>
-        <div className="container" style={{ padding: 0, maxWidth: '100%' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-            <InstagramCarousel />
-          </div>
-        </div>
-      </section >
-
-      {/* Blog Section */}
-      < section className="section-padding" style={{ background: 'var(--gray-100)' }}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2>Recent Articles</h2>
-            <div className={styles.underline}></div>
-          </div>
-          <BlogList initialPosts={blogPosts} />
-        </div>
-      </section >
-
-
       {/* Community Section */}
-      < section id="community" className="section-padding" >
+      <section id="community" className="section-padding">
         <div className={`container ${styles.communityContainer}`}>
           <div className={styles.communityImage}>
             <Image
@@ -149,9 +104,9 @@ export default async function Home() {
             </div>
           </div>
         </div>
-      </section >
+      </section>
 
       <Footer />
-    </main >
+    </main>
   );
 }
