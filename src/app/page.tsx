@@ -131,7 +131,7 @@ export default function Home() {
             </div>
             <div style={{ marginTop: '2rem' }}>
               <p style={{ marginBottom: '0.5rem', fontWeight: 600 }}>Interested in Cyber Security?</p>
-              <a href="https://t.me/+I0AIcU7Rw9gxMjU9" target="_blank" className="btn" style={{ fontSize: '0.9rem' }}>Join Cyber Security Group</a>
+              <a href="https://t.me/+I0AIcU7Rw9gxMjU9" target="_blank" className="btn btn-primary" style={{ fontSize: '0.9rem' }}>Join Cyber Security Group</a>
             </div>
           </div>
         </div>
