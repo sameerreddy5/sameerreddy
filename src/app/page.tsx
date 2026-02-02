@@ -129,6 +129,10 @@ export default function Home() {
               </a>
               <a href="https://t.me/sameerreddyin" target="_blank" className="btn btn-primary">Follow on Telegram</a>
             </div>
+            <div style={{ marginTop: '2rem' }}>
+              <p style={{ marginBottom: '0.5rem', fontWeight: 600 }}>Interested in Cyber Security?</p>
+              <a href="https://t.me/+CNg6pc74vvg4ZmU1" target="_blank" className="btn" style={{ fontSize: '0.9rem' }}>Join Cyber Security Group</a>
+            </div>
           </div>
         </div>
       </section>
