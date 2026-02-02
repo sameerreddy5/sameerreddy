@@ -81,6 +81,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 1:1 Session Section */}
+      <section className="section-padding">
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>1:1 Growth Session</h2>
+            <div className={styles.underline}></div>
+          </div>
+          <div style={{ maxWidth: '800px' }}>
+            <p style={{ fontSize: '1.125rem', marginBottom: '1.5rem', lineHeight: '1.8' }}>
+              Want to grow on Instagram? In this 1:1 session, you can ask me anything about:
+            </p>
+            <ul style={{ marginBottom: '2rem', paddingLeft: '1.5rem', lineHeight: '1.8' }}>
+              <li>How to get more views and reach</li>
+              <li>Strategies to gain genuine followers</li>
+              <li>Content improvement and engagement tips</li>
+            </ul>
+            <div style={{ background: 'var(--gray-100)', padding: '1.5rem', borderRadius: '12px', display: 'inline-block', marginBottom: '2rem' }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>15 Minutes Call</h3>
+              <p style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--primary)', marginBottom: '1rem' }}>₹500</p>
+              <a href="mailto:contact@sameerreddy.in?subject=Book%201:1%20Growth%20Session" className="btn btn-primary">
+                Book Session via Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Community Section */}
       <section id="community" className="section-padding">
         <div className={`container ${styles.communityContainer}`}>
