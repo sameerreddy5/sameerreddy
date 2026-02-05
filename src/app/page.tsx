@@ -4,30 +4,50 @@ import Image from 'next/image';
 // Component: HeroCard
 const HeroCard = () => (
     <div className="card animate-scale-in" style={{
-        marginBottom: '2rem',
-        padding: '3rem 2rem',
-        background: 'linear-gradient(135deg, var(--card-bg) 0%, rgba(31, 170, 89, 0.08) 100%)',
+        marginBottom: '3rem',
+        padding: '3rem',
+        background: 'linear-gradient(145deg, rgba(20, 20, 20, 0.9) 0%, rgba(31, 170, 89, 0.05) 100%)',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '2rem',
-        alignItems: 'center'
+        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+        gap: '3rem',
+        alignItems: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+        border: '1px solid rgba(255,255,255,0.03)'
     }}>
+        {/* Subtle Background Glow */}
+        <div style={{
+            position: 'absolute',
+            top: '-50%',
+            right: '-10%',
+            width: '400px',
+            height: '400px',
+            background: 'radial-gradient(circle, rgba(31, 170, 89, 0.1) 0%, rgba(0,0,0,0) 70%)',
+            pointerEvents: 'none',
+            zIndex: 0
+        }}></div>
+
         {/* Text Content */}
-        <div style={{ textAlign: 'left' }}>
-            <h2 style={{ fontSize: '0.9rem', color: 'var(--accent)', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '1rem', textTransform: 'uppercase' }}>
+        <div style={{ textAlign: 'left', position: 'relative', zIndex: 1 }}>
+            <h2 style={{ fontSize: '0.85rem', color: 'var(--accent)', fontWeight: 700, letterSpacing: '0.2rem', marginBottom: '1.2rem', textTransform: 'uppercase', opacity: 0.9 }}>
                 Dashboard
             </h2>
-            <h1 style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1.1, marginBottom: '0.5rem' }}>
+            <h1 style={{ fontSize: '3rem', fontWeight: 800, lineHeight: 1.1, marginBottom: '0.5rem', color: '#fff' }}>
                 Tamalampudi <br />
-                <span style={{ color: 'var(--text-muted)' }}>Sameer Reddy</span>
+                <span style={{
+                    background: 'linear-gradient(90deg, #fff 0%, var(--text-muted) 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                }}>Sameer Reddy</span>
             </h1>
-            <p style={{ fontSize: '1.2rem', color: '#fff', fontWeight: 500, marginBottom: '1.5rem', marginTop: '1rem' }}>
-                Instagram Growth, AI & Smart Tech
+            <p style={{ fontSize: '1.25rem', color: 'var(--accent)', fontWeight: 600, marginBottom: '1.5rem', marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>⚡</span> Instagram Growth & Tech
             </p>
-            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', maxWidth: '500px', marginBottom: '2rem', lineHeight: 1.6 }}>
-                Helping creators grow with clarity, discipline, and practical tools. No noise. Only growth.
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', maxWidth: '500px', marginBottom: '2.5rem', lineHeight: 1.7 }}>
+                Helping creators grow with clarity, discipline, and practical tools. <br />
+                <span style={{ color: '#fff' }}>No noise. Only growth.</span>
             </p>
-            <Link href="/sessions" className="btn btn-primary" style={{ padding: '0.8rem 2rem', fontSize: '1rem' }}>
+            <Link href="/sessions" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.05rem', borderRadius: '50px' }}>
                 Book a 1:1 Session
             </Link>
         </div>
@@ -37,12 +57,13 @@ const HeroCard = () => (
             <div style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: '300px',
+                maxWidth: '320px',
                 aspectRatio: '1/1',
-                borderRadius: '50%',
+                borderRadius: '24px',
                 overflow: 'hidden',
-                border: '4px solid rgba(31, 170, 89, 0.2)',
-                boxShadow: '0 0 40px rgba(31, 170, 89, 0.15)'
+                border: '1px solid rgba(255,255,255,0.1)',
+                boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
+                transform: 'rotate(-2deg)',
             }}>
                 <Image
                     src="https://picasso.cosmofeed.com/picture-profile.s3-ap-south-1.amazonaws.com/my_image1770277973-2026-05-02-07-52-54.png?w=600&&q=100"
@@ -53,7 +74,6 @@ const HeroCard = () => (
                 />
             </div>
         </div>
-
     </div>
 );
 
@@ -65,32 +85,35 @@ const FocusCard = ({ title, description, link, icon }: { title: string, descript
         justifyContent: 'space-between',
         textDecoration: 'none',
         height: '100%',
-        transition: 'transform 0.2s, border-color 0.2s',
-        padding: '2rem'
+        transition: 'background 0.3s, transform 0.3s',
+        padding: '2rem',
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)',
+        border: '1px solid rgba(255,255,255,0.05)'
     }}>
         <div>
             <div style={{
                 fontSize: '1.5rem',
-                marginBottom: '1rem',
+                marginBottom: '1.25rem',
                 color: 'var(--accent)',
                 background: 'rgba(31, 170, 89, 0.1)',
-                width: '50px',
-                height: '50px',
+                width: '56px',
+                height: '56px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                borderRadius: '12px'
+                borderRadius: '16px',
+                border: '1px solid rgba(31, 170, 89, 0.2)'
             }}>
                 {icon}
             </div>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem', color: '#fff' }}>
+            <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.75rem', color: '#fff' }}>
                 {title}
             </h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.5 }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.6 }}>
                 {description}
             </p>
         </div>
-        <div style={{ marginTop: '1.5rem', fontSize: '1.1rem', color: 'var(--accent)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div style={{ marginTop: '2rem', fontSize: '1rem', color: 'var(--accent)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: 0.8 }}>
             Explore <span style={{ transition: 'transform 0.2s' }}>&rarr;</span>
         </div>
     </Link>
@@ -101,25 +124,25 @@ const StatsStrip = () => (
     <div style={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: '1rem',
-        justifyContent: 'space-between',
-        marginBottom: '3rem',
-        padding: '2rem',
+        gap: '2rem',
+        justifyContent: 'space-around',
+        marginBottom: '4rem',
+        padding: '2.5rem 2rem',
         background: 'var(--card-bg)',
-        borderRadius: '12px',
-        border: '1px solid rgba(255,255,255,0.05)'
+        borderRadius: '16px',
+        border: '1px solid rgba(255,255,255,0.03)'
     }}>
-        <div style={{ textAlign: 'center', flex: '1 1 150px' }}>
-            <span style={{ display: 'block', fontSize: '1.75rem', fontWeight: 800, color: '#fff' }}>Millions+</span>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Reels Reach</span>
+        <div style={{ textAlign: 'center' }}>
+            <span style={{ display: 'block', fontSize: '2rem', fontWeight: 800, color: '#fff', marginBottom: '0.25rem' }}>Millions+</span>
+            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Reels Reach</span>
         </div>
-        <div style={{ textAlign: 'center', flex: '1 1 150px', borderLeft: '1px solid rgba(255,255,255,0.1)', borderRight: '1px solid rgba(255,255,255,0.1)' }}>
-            <span style={{ display: 'block', fontSize: '1.75rem', fontWeight: 800, color: '#fff' }}>Community</span>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Driven Growth</span>
+        <div style={{ textAlign: 'center' }}>
+            <span style={{ display: 'block', fontSize: '2rem', fontWeight: 800, color: '#fff', marginBottom: '0.25rem' }}>Community</span>
+            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Driven Growth</span>
         </div>
-        <div style={{ textAlign: 'center', flex: '1 1 150px' }}>
-            <span style={{ display: 'block', fontSize: '1.75rem', fontWeight: 800, color: '#fff' }}>1:1 Sessions</span>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Helped Creators</span>
+        <div style={{ textAlign: 'center' }}>
+            <span style={{ display: 'block', fontSize: '2rem', fontWeight: 800, color: '#fff', marginBottom: '0.25rem' }}>1:1 Sessions</span>
+            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Helped Creators</span>
         </div>
     </div>
 );
@@ -127,23 +150,36 @@ const StatsStrip = () => (
 // Component: ActionPanel
 const ActionPanel = () => (
     <div className="card" style={{
-        padding: '3rem 2rem',
+        padding: '4rem 2rem',
         textAlign: 'center',
-        marginBottom: '3rem',
-        border: '1px solid rgba(31, 170, 89, 0.3)',
-        background: 'linear-gradient(180deg, rgba(31, 170, 89, 0.05) 0%, rgba(0,0,0,0) 100%)'
+        marginBottom: '4rem',
+        border: '1px solid rgba(31, 170, 89, 0.2)',
+        background: 'linear-gradient(180deg, rgba(31, 170, 89, 0.08) 0%, rgba(0,0,0,0) 100%)',
+        position: 'relative',
+        overflow: 'hidden'
     }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', color: '#fff' }}>
-            Need clarity on your Instagram growth?
+        <div style={{
+            position: 'absolute',
+            top: '0',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '600px',
+            height: '200px',
+            background: 'radial-gradient(circle, rgba(31, 170, 89, 0.15) 0%, rgba(0,0,0,0) 70%)',
+            pointerEvents: 'none',
+        }}></div>
+
+        <h2 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '1.25rem', color: '#fff', position: 'relative', zIndex: 1 }}>
+            Ready to stop guessing?
         </h2>
-        <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', maxWidth: '500px', margin: '0 auto 2rem' }}>
+        <p style={{ color: 'var(--text-muted)', marginBottom: '2.5rem', maxWidth: '550px', margin: '0 auto 2.5rem', position: 'relative', zIndex: 1, fontSize: '1.1rem' }}>
             Book a 1:1 session to audit your profile, fix your content strategy, and build a system that works.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/sessions" className="btn btn-primary">
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 1 }}>
+            <Link href="/sessions" className="btn btn-primary" style={{ padding: '1rem 3rem', borderRadius: '50px' }}>
                 Book a Session
             </Link>
-            <Link href="/what-i-do" className="btn" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
+            <Link href="/what-i-do" className="btn" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', padding: '1rem 3rem', borderRadius: '50px', border: '1px solid rgba(255,255,255,0.1)' }}>
                 See What I Do
             </Link>
         </div>
@@ -158,12 +194,12 @@ export default function Dashboard() {
 
             <StatsStrip />
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.1rem', color: '#fff', fontWeight: 700 }}>Focus Areas</h3>
-                <Link href="/what-i-do" style={{ fontSize: '0.9rem', color: 'var(--accent)' }}>View All &rarr;</Link>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+                <h3 style={{ fontSize: '1.25rem', color: '#fff', fontWeight: 700 }}>Focus Areas</h3>
+                <Link href="/what-i-do" style={{ fontSize: '0.9rem', color: 'var(--accent)', fontWeight: 600 }}>View All &rarr;</Link>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '4rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '5rem' }}>
                 <FocusCard
                     title="Instagram Storytelling"
                     description="Master the art of short-form content that educates and retains."
