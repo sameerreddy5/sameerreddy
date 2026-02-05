@@ -54,11 +54,6 @@ const HeroCard = () => (
             </div>
         </div>
 
-        <style jsx>{`
-            @media (min-width: 768px) {
-                .hero-image-container { order: 1 !important; justify-content: flex-end !important; }
-            }
-        `}</style>
     </div>
 );
 

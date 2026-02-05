@@ -80,6 +80,11 @@ a {
     padding: 3rem 2rem;
     max-width: 768px;
   }
+  
+  .hero-image-container {
+    order: 1 !important;
+    justify-content: flex-end !important;
+  }
 }
 
 @media (min-width: 1024px) {
