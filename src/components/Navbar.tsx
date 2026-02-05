@@ -49,13 +49,27 @@ export default function Navbar() {
                                 key={item.path}
                                 href={item.path}
                                 style={{
-                                    fontSize: '0.9rem',
+                                    fontSize: '0.95rem',
                                     fontWeight: isActive ? 600 : 500,
-                                    color: isActive ? 'var(--accent)' : 'var(--text-muted)',
-                                    transition: 'color 0.2s'
+                                    color: isActive ? '#fff' : 'var(--text-muted)',
+                                    transition: 'color 0.2s',
+                                    position: 'relative',
+                                    paddingBottom: '0.25rem'
                                 }}
                             >
                                 {item.name}
+                                {isActive && (
+                                    <span style={{
+                                        position: 'absolute',
+                                        bottom: '-4px',
+                                        left: '0',
+                                        width: '100%',
+                                        height: '2px',
+                                        background: 'var(--accent)',
+                                        boxShadow: '0 0 10px var(--accent)',
+                                        borderRadius: '2px'
+                                    }} />
+                                )}
                             </Link>
                         );
                     })}
