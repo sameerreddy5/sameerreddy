@@ -118,33 +118,7 @@ const FocusCard = ({ title, description, link, icon }: { title: string, descript
     </Link>
 );
 
-// Component: StatsStrip
-const StatsStrip = () => (
-    <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '2rem',
-        justifyContent: 'space-around',
-        marginBottom: '4rem',
-        padding: '2.5rem 2rem',
-        background: 'var(--card-bg)',
-        borderRadius: '16px',
-        border: '1px solid rgba(255,255,255,0.03)'
-    }}>
-        <div style={{ textAlign: 'center' }}>
-            <span style={{ display: 'block', fontSize: '2rem', fontWeight: 800, color: '#fff', marginBottom: '0.25rem' }}>Millions+</span>
-            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Reels Reach</span>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-            <span style={{ display: 'block', fontSize: '2rem', fontWeight: 800, color: '#fff', marginBottom: '0.25rem' }}>Community</span>
-            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Driven Growth</span>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-            <span style={{ display: 'block', fontSize: '2rem', fontWeight: 800, color: '#fff', marginBottom: '0.25rem' }}>1:1 Sessions</span>
-            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Helped Creators</span>
-        </div>
-    </div>
-);
+// Component: StatsStrip removed per user request for simplification
 
 // Component: ActionPanel
 const ActionPanel = () => (
@@ -191,7 +165,13 @@ export default function Dashboard() {
 
             <HeroCard />
 
-            <StatsStrip />
+
+            {/* Direct Value Proposition */}
+            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                <p style={{ fontSize: '1.25rem', color: '#fff', fontWeight: 600, maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
+                    I bridge the gap between <span style={{ color: 'var(--accent)' }}>confusion</span> and <span style={{ color: 'var(--accent)' }}>clarity</span>.
+                </p>
+            </div>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
                 <h3 style={{ fontSize: '1.25rem', color: '#fff', fontWeight: 700 }}>Focus Areas</h3>
@@ -201,19 +181,19 @@ export default function Dashboard() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '5rem' }}>
                 <FocusCard
                     title="Instagram Storytelling"
-                    description="Master the art of short-form content that educates and retains."
+                    description="Learn to create short videos that actually connect with people."
                     link="/what-i-do"
                     icon="📱"
                 />
                 <FocusCard
                     title="Creator Tools"
-                    description="CapCut, AI voiceovers, and efficient editing workflows."
+                    description="The best AI & editing tools you need to speed up your work."
                     link="/what-i-do"
                     icon="⚡"
                 />
                 <FocusCard
                     title="Learning Paths"
-                    description="Step-by-step roadmaps for beginners to start growing."
+                    description="Step-by-step guides for beginners. Start from zero."
                     link="/what-i-do"
                     icon="🎓"
                 />
