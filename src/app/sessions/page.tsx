@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Sessions() {
     return (
-        <div className="container animate-fade-in" style={{ padding: '3rem 1.5rem', maxWidth: '900px' }}>
+        <div className="page-container animate-fade-in">
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
                 <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem' }}>1:1 Instagram Clarity Sessions</h1>
                 <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>

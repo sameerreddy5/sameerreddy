@@ -109,7 +109,7 @@ const ActionPanel = () => (
 
 export default function Dashboard() {
     return (
-        <div className="container animate-fade-in" style={{ padding: '2rem 1.5rem', maxWidth: '1000px' }}>
+        <div className="page-container animate-fade-in">
 
             <HeroCard />
 
@@ -137,8 +137,6 @@ export default function Dashboard() {
             <TrustPanel />
 
             <ActionPanel />
-
-
 
         </div>
     );
