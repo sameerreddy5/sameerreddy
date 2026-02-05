@@ -1,237 +1,174 @@
-.hero {
-  padding: 6rem 0;
-  display: flex;
-  align-items: center;
-  min-height: 80vh;
+/* Layout & Spacing */
+.main {
+  background-color: var(--background);
+  min-height: 100vh;
 }
 
-.heroContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.section {
+  padding: 4rem 1.5rem;
   width: 100%;
 }
 
-.heroContent {
-  flex: 1;
-  padding-right: 2rem;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.subtitle {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.875rem;
-  color: var(--primary);
-  font-weight: 600;
-  display: block;
-  margin-bottom: 1rem;
+/* Hero Section */
+.hero {
+  padding: 6rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .title {
-  font-size: 3.5rem;
-  line-height: 1.1;
+  font-size: 2.5rem;
   font-weight: 800;
-  margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .description {
   font-size: 1.125rem;
-  color: var(--gray-800);
-  margin-bottom: 2rem;
-  max-width: 500px;
+  color: var(--gray);
+  max-width: 600px;
+  line-height: 1.6;
 }
 
-.heroImage {
-  flex: 1;
+/* Buttons */
+.ctaContainer {
   display: flex;
-  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.imageWrapper {
-  position: relative;
-}
-
-.profileImg {
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 0 0 4px var(--primary);
-}
-
-.sectionHeader {
-  margin-bottom: 3rem;
-  text-align: left;
-}
-
-.sectionHeader h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.underline {
-  height: 4px;
-  width: 60px;
+.btnPrimary {
   background-color: var(--primary);
-  border-radius: 2px;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
 }
 
-.aboutContent {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  max-width: 800px;
-  color: var(--gray-800);
+.btnPrimary:hover {
+  opacity: 0.9;
 }
 
-.aboutContent p {
-  margin-bottom: 1.5rem;
+.btnOutline {
+  border: 1px solid var(--gray);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.2s;
 }
 
+.btnOutline:hover {
+  border-color: #fff;
+}
+
+/* What I Do Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
 .card {
+  background-color: var(--card-bg);
   padding: 2rem;
-  border: 1px solid var(--gray-200);
   border-radius: 12px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border-color: var(--primary);
+  transform: translateY(-2px);
 }
 
-.card h3 {
+.cardTitle {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.card p {
-  color: var(--gray-800);
-  opacity: 0.8;
-}
-
-.resources {
-  background-color: var(--gray-100);
-}
-
-.resourceGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.resourceCard {
-  background: var(--background);
-  padding: 1.5rem;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.resourceIcon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.resourceCard h4 {
-  font-size: 1.1rem;
-}
-
-.linkArrow {
-  margin-top: auto;
-  padding-top: 1rem;
   font-weight: 600;
-  font-size: 0.9rem;
+  margin-bottom: 1rem;
   color: var(--primary);
+  /* Subtle green underline effect if desired, or just color */
+  border-bottom: 1px solid rgba(31, 170, 89, 0.2);
+  padding-bottom: 0.5rem;
+  display: inline-block;
 }
 
-.communityContainer {
-  display: flex;
-  align-items: center;
-  gap: 4rem;
+/* Proof Section */
+.proofSection {
+  border-top: 1px solid #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
 }
 
-.communityImage {
-  flex: 1;
+.proofGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
 }
 
-.feedImg {
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transform: rotate(-2deg);
-  transition: transform 0.3s ease;
+/* About Section */
+.aboutContainer {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.feedImg:hover {
-  transform: rotate(0);
-}
-
-.communityContent {
-  flex: 1;
-}
-
-.communityContent h2 {
-  font-size: 2.5rem;
+.aboutText {
+  color: var(--gray);
+  line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-.communityContent p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  color: var(--gray-800);
+.aboutList {
+  color: var(--gray);
+  line-height: 1.6;
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
-.socialButtons {
+/* Booking Embed */
+.bookingContainer {
+  width: 100%;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 1rem;
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 600px;
 }
 
-@media (max-width: 768px) {
-  .heroContainer {
-    flex-direction: column-reverse;
-    /* Text below image on mobile usually, but standard is Image Top or Image Bottom? Let's do Text Bottom if image is big, but standard hero is Text Top. Let's stack naturally: Text then Image? No, usually Image then Text or Text then Image. Let's do Text Top. */
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .heroContent {
-    padding-right: 0;
-    margin-bottom: 3rem;
-  }
-
-  .heroImage {
-    justify-content: center;
-  }
-
-  .profileImg {
-    width: 250px;
-    height: 250px;
-  }
-
+/* Media Queries */
+@media (min-width: 768px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
-  .communityContainer {
-    flex-direction: column;
-    text-align: center;
+  .hero {
+    padding: 8rem 1.5rem;
   }
 
-  .feedImg {
-    transform: none;
-    max-width: 100%;
-    height: auto;
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .socialButtons {
-    justify-content: center;
+  .proofGrid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
