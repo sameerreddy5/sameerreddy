@@ -59,11 +59,10 @@ const HeroCard = () => (
                 width: '100%',
                 maxWidth: '320px',
                 aspectRatio: '1/1',
-                borderRadius: '24px',
+                borderRadius: '50%',
                 overflow: 'hidden',
                 border: '1px solid rgba(255,255,255,0.1)',
                 boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-                transform: 'rotate(-2deg)',
             }}>
                 <Image
                     src="https://picasso.cosmofeed.com/picture-profile.s3-ap-south-1.amazonaws.com/my_image1770277973-2026-05-02-07-52-54.png?w=600&&q=100"
