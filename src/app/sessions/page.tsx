@@ -49,7 +49,7 @@ export default function Sessions() {
             <div style={{ width: '100%', borderRadius: '12px' }}>
                 <iframe
                     src="https://cosmofeed.com/bookings/sameerreddy"
-                    style={{ width: '100%', height: '1600px', border: 'none' }}
+                    style={{ width: '100%', minHeight: '1800px', height: '100%', border: 'none' }}
                     title="Book a Session"
                 />
             </div>
