@@ -33,8 +33,12 @@ export default function Sessions() {
             </div>
 
             {/* Booking Embed */}
-            <div style={{ width: '100%', minHeight: '100vh' }}>
-                <div id="booking-embed" data-src="https://superprofile.bio/bookings/sameerreddy?all&type=embedBooking&embedBgColor=0F0F0F"></div>
+            <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+                <div
+                    id="booking-embed"
+                    data-src="https://superprofile.bio/bookings/sameerreddy?all&type=embedBooking&embedBgColor=0F0F0F"
+                    style={{ width: '100%', minHeight: '800px', flex: 1 }}
+                ></div>
                 <Script id='cosmofeed-embed-booking' src='https://cosmofeed.com/assets/embed/booking-embed.js' strategy="lazyOnload" />
             </div>
 
