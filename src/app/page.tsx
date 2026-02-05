@@ -8,7 +8,7 @@ const HeroCard = () => (
         padding: '3rem',
         background: 'linear-gradient(145deg, rgba(20, 20, 20, 0.9) 0%, rgba(31, 170, 89, 0.05) 100%)',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
         gap: '3rem',
         alignItems: 'center',
         position: 'relative',
@@ -57,7 +57,7 @@ const HeroCard = () => (
             <div style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: '320px',
+                maxWidth: '280px', // Reduced for better mobile fit
                 aspectRatio: '1/1',
                 borderRadius: '50%',
                 overflow: 'hidden',
@@ -178,7 +178,7 @@ export default function Dashboard() {
                 <Link href="/what-i-do" style={{ fontSize: '0.9rem', color: 'var(--accent)', fontWeight: 600 }}>View All &rarr;</Link>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem', marginBottom: '5rem' }}>
                 <FocusCard
                     title="Instagram Storytelling"
                     description="Learn to create short videos that actually connect with people."
