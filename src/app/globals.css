@@ -32,9 +32,10 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-inter), sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #0d0a13 0%, #1a0b2e 50%, #16213e 100%);
+  background-attachment: fixed; /* Ensures gradient covers scrollable area */
+  font-family: var(--font-poppins), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
