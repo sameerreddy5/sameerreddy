@@ -55,16 +55,62 @@ export default function Home() {
           <div className={styles.grid}>
             <div className={styles.card}>
               <h3>Instagram Storytelling</h3>
-              <p>Short-form content that educates and inspires. Join our community of learners.</p>
+              <p className="subtitle" style={{ fontWeight: 500, marginBottom: '1rem', color: 'var(--primary)' }}>
+                Short-form content that educates, simplifies, and builds trust.
+              </p>
+              <p style={{ marginBottom: '1rem' }}>
+                I create Telugu-first storytelling reels that explain growth, tech, and creator journeys in a calm, practical way—no hype, no noise.
+              </p>
+              <p style={{ fontWeight: 600, marginBottom: '0.5rem' }}>You’ll learn:</p>
+              <ul style={{ paddingLeft: '1.2rem', marginBottom: '1rem' }}>
+                <li>How to tell stories that hold attention</li>
+                <li>How to educate through reels</li>
+                <li>How to build a consistent creator identity</li>
+              </ul>
             </div>
+
             <div className={styles.card}>
               <h3>Creator Tools</h3>
-              <p>Guides on CapCut, AI voiceovers, and editing workflows to help you start creating.</p>
+              <p className="subtitle" style={{ fontWeight: 500, marginBottom: '1rem', color: 'var(--primary)' }}>
+                Practical guides on tools every creator needs to start and grow.
+              </p>
+              <p style={{ marginBottom: '1rem' }}>
+                I break down creator tools into simple, beginner-friendly steps so you can focus on creating—not figuring things out.
+              </p>
+              <p style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Includes guides on:</p>
+              <ul style={{ paddingLeft: '1.2rem', marginBottom: '1rem' }}>
+                <li>CapCut (Android, PC & iOS)</li>
+                <li>AI voice tools (ElevenLabs, Gemini, etc.)</li>
+                <li>Clean editing & posting workflows</li>
+              </ul>
+              <p style={{ fontStyle: 'italic', fontSize: '0.9rem' }}>Everything shared is tested and real-world usable.</p>
             </div>
+
             <div className={styles.card}>
               <h3>Learning Paths</h3>
-              <p>Curated roadmaps for beginners to master digital skills step-by-step.</p>
+              <p className="subtitle" style={{ fontWeight: 500, marginBottom: '1rem', color: 'var(--primary)' }}>
+                Structured roadmaps to remove confusion and build consistency.
+              </p>
+              <p style={{ marginBottom: '1rem' }}>
+                Instead of random tips, I provide clear learning paths designed for beginners who want direction.
+              </p>
+              <p style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Learning paths help you:</p>
+              <ul style={{ paddingLeft: '1.2rem', marginBottom: '1rem' }}>
+                <li>Start from zero without overwhelm</li>
+                <li>Learn step-by-step in the right order</li>
+                <li>Build skills consistently over time</li>
+              </ul>
+              <p style={{ fontStyle: 'italic', fontSize: '0.9rem' }}>Perfect for creators who want clarity, not shortcuts.</p>
             </div>
+          </div>
+
+          {/* CTA */}
+          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <p style={{ fontSize: '1.2rem', fontWeight: 500 }}>
+              Explore guides, book a 1:1 session, or start with a learning path.
+              <br />
+              <span style={{ color: 'var(--primary)', fontWeight: 700 }}>No noise. Only growth.</span>
+            </p>
           </div>
         </div>
       </section>
