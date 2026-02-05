@@ -32,14 +32,13 @@ export default function Sessions() {
                 </div>
             </div>
 
-            {/* Booking Embed */}
-            <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div
-                    id="booking-embed"
-                    data-src="https://superprofile.bio/bookings/sameerreddy?all&type=embedBooking&embedBgColor=0F0F0F"
-                    style={{ width: '100%', minHeight: '800px', flex: 1 }}
-                ></div>
-                <Script id='cosmofeed-embed-booking' src='https://cosmofeed.com/assets/embed/booking-embed.js' strategy="lazyOnload" />
+            {/* Booking Iframe */}
+            <div style={{ width: '100%', minHeight: '100vh', borderRadius: '12px', overflow: 'hidden' }}>
+                <iframe
+                    src="https://cosmofeed.com/bookings/sameerreddy"
+                    style={{ width: '100%', height: '100vh', border: 'none' }}
+                    title="Book a Session"
+                />
             </div>
 
         </div>

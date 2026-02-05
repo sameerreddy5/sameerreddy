@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
-import MobileNav from "@/components/MobileNav";
+import MobileHamburgerNav from "@/components/MobileHamburgerNav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,20 +35,21 @@ export default function RootLayout({
             flex: 1,
             marginLeft: '0',
             width: '100%',
-            paddingBottom: '80px' // Space for mobile nav
+            paddingTop: '80px', // Space for mobile top nav
+            paddingBottom: '2rem'
           }} className="main-content">
             {children}
           </main>
 
-          {/* Mobile Bottom Nav */}
-          <MobileNav />
+          {/* Mobile Top Nav (Hamburger) */}
+          <MobileHamburgerNav />
         </div>
 
         <style>{`
           @media (min-width: 1024px) {
             .main-content {
               margin-left: 280px !important; /* Sidebar width */
-              padding-bottom: 0 !important;
+              padding-top: 0 !important;
               max-width: calc(100vw - 280px);
             }
           }
