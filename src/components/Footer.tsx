@@ -15,6 +15,8 @@ export default function Footer() {
                     <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', color: 'var(--gray)', fontSize: '0.9rem' }}>
                         <a href="https://t.me/sameerreddyin" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gray)', textDecoration: 'none' }}>Telegram</a>
                         <span>•</span>
+                        <a href="/media-kit" style={{ color: 'var(--gray)', textDecoration: 'none' }}>Media Kit</a>
+                        <span>•</span>
                         <a href="https://www.linkedin.com/in/tamalampudi-sameer-reddy/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gray)', textDecoration: 'none' }}>LinkedIn</a>
                     </div>
                 </div>
