@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function About() {
     return (
-        <div className="container animate-fade-in" style={{ padding: '3rem 1.5rem', maxWidth: '800px' }}>
+        <div className="page-container animate-fade-in">
             <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '2rem' }}>About Me</h1>
 
             <div className="card" style={{ padding: '2.5rem' }}>

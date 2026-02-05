@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function MediaKit() {
     return (
-        <div className="container animate-fade-in" style={{ padding: '3rem 1.5rem', maxWidth: '800px' }}>
+        <div className="page-container animate-fade-in">
             <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '0.5rem' }}>Media Kit</h1>
             <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>Collaborate with Sameer Reddy.</p>
 

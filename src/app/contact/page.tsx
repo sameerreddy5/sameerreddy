@@ -1,6 +1,6 @@
 export default function Contact() {
     return (
-        <div className="container animate-fade-in" style={{ padding: '3rem 1.5rem', maxWidth: '600px' }}>
+        <div className="page-container animate-fade-in">
             <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '2rem', textAlign: 'center' }}>Contact</h1>
 
             <div className="card" style={{ padding: '2rem' }}>
