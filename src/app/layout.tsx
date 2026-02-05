@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Tamalampudi Sameer Reddy | Instagram Growth & Tech Educator",
-  description: "No noise. Only growth. Helping creators grow with clarity, discipline, and practical tools.",
+  title: "Sameer Reddy | Instagram Growth, AI Tools & Smart Tech",
+  description: "Learn Instagram growth, creator tools, AI tips, and smart tech with Sameer Reddy. No noise. Only growth.",
   other: {
     "google-adsense-account": "ca-pub-3156356414560763"
   }
