@@ -138,10 +138,7 @@ export default function Dashboard() {
 
             <ActionPanel />
 
-            {/* Brand Footer */}
-            <div style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 500, opacity: 0.6, paddingBottom: '2rem' }}>
-                No noise. Only growth.
-            </div>
+
 
         </div>
     );

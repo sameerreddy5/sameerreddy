@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
-import MobileHamburgerNav from "@/components/MobileHamburgerNav";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,34 +26,25 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <div style={{ display: 'flex', minHeight: '100vh' }}>
-          {/* Desktop Sidebar */}
-          <Sidebar />
+        <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+
+          {/* Top Navbar */}
+          <Navbar />
 
           {/* Main Content Area */}
           <main style={{
             flex: 1,
-            marginLeft: '0',
             width: '100%',
-            paddingTop: '80px', // Space for mobile top nav
+            paddingTop: '70px', // Space for fixed navbar
             paddingBottom: '2rem'
           }} className="main-content">
             {children}
           </main>
 
-          {/* Mobile Top Nav (Hamburger) */}
-          <MobileHamburgerNav />
-        </div>
+          {/* Global Footer */}
+          <Footer />
 
-        <style>{`
-          @media (min-width: 1024px) {
-            .main-content {
-              margin-left: 280px !important; /* Sidebar width */
-              padding-top: 0 !important;
-              max-width: calc(100vw - 280px);
-            }
-          }
-        `}</style>
+        </div>
       </body>
     </html>
   );

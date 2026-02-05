@@ -23,9 +23,16 @@ export default function About() {
                         🔬 <strong>IASc–INSA–NASI Summer Research Fellow 2025</strong>
                     </li>
                     <li>
-                        Item Worked under <strong>Dr. Sudarshan Iyengar</strong> at <strong>IIT Ropar</strong>
+                        Worked under <strong>Dr. Sudarshan Iyengar</strong> at <strong>IIT Ropar</strong>
                     </li>
                 </ul>
+
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--accent)', marginBottom: '1rem' }}>
+                    Based In
+                </h3>
+                <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '2rem' }}>
+                    Ubalanka, Konaseema District, Andhra Pradesh 533237
+                </p>
 
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--accent)', marginBottom: '1rem' }}>
                     My Philosophy

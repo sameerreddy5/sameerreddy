@@ -32,11 +32,11 @@ export default function Sessions() {
                 </div>
             </div>
 
-            {/* Booking Iframe */}
-            <div style={{ width: '100%', minHeight: '100vh', borderRadius: '12px', overflow: 'hidden' }}>
+            {/* Booking Iframe - Fixed Height to prevent internal scrolling */}
+            <div style={{ width: '100%', borderRadius: '12px' }}>
                 <iframe
                     src="https://cosmofeed.com/bookings/sameerreddy"
-                    style={{ width: '100%', height: '100vh', border: 'none' }}
+                    style={{ width: '100%', height: '1600px', border: 'none' }}
                     title="Book a Session"
                 />
             </div>
